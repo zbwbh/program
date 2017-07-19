@@ -16,6 +16,7 @@ public class Average {
        double sum = 0.0;
        int cnt = 0;
        while(!StdIn.isEmpty()){//StdIn.isEmpty方法是找下一个在控制台输入的值
+           //该方法基本上会保证无限循环，如果使用撤销命令可以结束方法(ctrl+z)
            //读取一个数并计算累计之和
            sum+=StdIn.readDouble();
            cnt++;

@@ -16,17 +16,19 @@ public class GongYueShu {
      * 否则，将p除以q得到余数r，p和q的最大公约数就是q和r的最大公约数
      * 
      * 因为采用了递归的方式，那么如果要跳出递归的唯一方法就是r=0，那么就会返回p，是一次次筛选之后得到的结果
+     * 
      * @author koala
      * @since 2017年7月18日
      */
-    public static int gcd(int p,int q){
-        if(q==0)return p;
+    public static int gcd(int p, int q) {
+        if (q == 0)
+            return p;
         int r = p % q;
-        return gcd(q,r);
+        return gcd(q, r);
     }
-    
+
     public static void main(String[] args) {
-        int result = gcd(16,12);
-        System.out.println(result);//4
+        int result = gcd(16, 12);
+        System.out.println(result);// 4
     }
 }

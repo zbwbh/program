@@ -16,24 +16,28 @@ import com.algs4.stdlib.StdOut;
 public class BinarySearchDemo {
 
     public static int rank(int key, int[] a) {
-        //数组必须是有序的，可以采用API中的sort进行排序
+        // 数组必须是有序的，可以采用API中的sort进行排序
         int lo = 0;
-        int hi = a.length-1;
-        while (lo<=hi) {
-            //被查找的键要么不存在，要么必然存在于他们之间
-            int mid = lo + (hi-lo)/2;
-            if      (key < a[mid]) hi = mid - 1;
-            else if (key > a[mid]) lo = mid + 1;
-            else                   return mid;
+        int hi = a.length - 1;
+        while (lo <= hi) {
+            // 被查找的键要么不存在，要么必然存在于他们之间
+            int mid = lo + (hi - lo) / 2;
+            if (key < a[mid])
+                hi = mid - 1;
+            else if (key > a[mid])
+                lo = mid + 1;
+            else
+                return mid;
         }
         return -1;
     }
+
     public static void main(String[] args) {
-        int[] whitelist = {3,1,5,6,9,7,8};
+        int[] whitelist = { 3, 1, 5, 6, 9, 7, 8 };
         Arrays.sort(whitelist);
-        while(!StdIn.isEmpty()) {
+        while (!StdIn.isEmpty()) {
             int key = StdIn.readInt();
-            if(rank(key,whitelist)<0){
+            if (rank(key, whitelist) < 0) {
                 StdOut.println(key);
             }
         }

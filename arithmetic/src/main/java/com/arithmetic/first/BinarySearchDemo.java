@@ -8,7 +8,7 @@ import com.algs4.stdlib.StdOut;
 /**
  * 执行之后才明白，这是一个过滤黑名单的程序，
  * 不是数组的元素会出现在控制台输出
- * 
+ * 二分查找法
  *
  * @author koala
  * @since 2017年7月19日

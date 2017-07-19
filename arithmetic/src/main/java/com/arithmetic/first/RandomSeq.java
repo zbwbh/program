@@ -22,5 +22,7 @@ public class RandomSeq {
             StdOut.printf("%.2f\n",x);//方法内部封装的格式化输出
         }
         StdOut.printf("PI is %.2f\n", Math.PI);
+        //临时看见的，Java中&&的优先级高于||
+        System.out.println(true&&false||true&&true);//true
     }
 }

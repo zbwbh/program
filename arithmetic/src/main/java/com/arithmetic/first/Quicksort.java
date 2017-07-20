@@ -33,7 +33,7 @@ public class Quicksort {
                     s[j] = s[i];//有的代码写的是s[j--]=s[i]，跟上面同样的疑问
             }
             s[i] = x;//最后是s[i]填的坑
-            quickSort(s, left, i - 1);//第i位填的坑，当然避开第i位了，左面的就减一，右面的就从加一开始
+            quickSort(s, left, i - 1);//第i位填的坑，当然避开第i位了，左面的就从减一个位置开始，右面的就从加一的位置开始
             quickSort(s, i + 1, right);
         }
     }

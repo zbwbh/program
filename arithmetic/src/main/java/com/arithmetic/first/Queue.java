@@ -3,8 +3,14 @@ package com.arithmetic.first;
 
 public class Queue {
 
-    public static void queue(int[]a,int head,int second){
-        
+    /**
+     * 个人认为如果要得到一个qq号，那一定要返回什么是吧
+     *
+     * @author koala
+     * @since 2017年7月20日
+     */
+    public static int[] queue(int[]a,int head,int second){
+        return null;
     }
     
     public static void main(String[] args) {

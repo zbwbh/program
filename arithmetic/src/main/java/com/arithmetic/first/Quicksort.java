@@ -11,7 +11,7 @@ import java.util.Arrays;
  * @author koala
  * @since 2017年7月19日
  */
-public class quicksort {
+public class Quicksort {
 
     static void quickSort(int[] s, int left, int right) {
         if (left < right) {// 始终以左边的下标小于右边的下标为大前提
@@ -24,16 +24,16 @@ public class quicksort {
                 while (i < j && s[j] >= x) {
                     j--;
                 }
-                if (i < j)
-                    s[i] = s[j];//这里为什么是如果这里写s[i++]也没有问题是为什么
+                if (i < j)//当第一时间满足s[j]>=x的条件的时候就代表找到大于基数的数了，此时换坑
+                    s[i] = s[j];//有的代码写的是s[i++]=s[j]，不明白你i位缺的坑为什么上后一位去填
                 while (i < j && s[i] < x) {
                     i++;
                 }
                 if (i < j)
-                    s[j] = s[i];
+                    s[j] = s[i];//有的代码写的是s[j--]=s[i]，跟上面同样的疑问
             }
-            s[i] = x;
-            quickSort(s, left, i - 1);
+            s[i] = x;//最后是s[i]填的坑
+            quickSort(s, left, i - 1);//第i位填的坑，当然避开第i位了，左面的就减一，右面的就从加一开始
             quickSort(s, i + 1, right);
         }
     }

@@ -22,4 +22,8 @@ public class EnumSingleton {
             return instance;
         }
     }
+    
+    public static void main(String[] args) {
+        Mysingleton e = EnumSingleton.Mysingleton.INSTANCE;
+    }
 }

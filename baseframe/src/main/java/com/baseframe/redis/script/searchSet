@@ -1,0 +1,21 @@
+local result={};
+local start = 0;
+local size = 500;
+while true do
+	local next = redis.call('scan',start,'match',KEYS[1]..'*','count',size);
+	local rs = next[2];
+	for index,key in ipairs(rs) do
+		local temp = redis.call('sscan',key,0,'match','*'+KEYS[2]+'*','count','9999');
+		if table.maxn(rs)~=0 then
+			local val_str = table.concat(temp[2],",");
+			table.insert(result,val_str);
+		end;
+	end;
+	
+	start = next[1];
+	if start == '0' then
+		break;
+	end;
+	
+end;
+return result;

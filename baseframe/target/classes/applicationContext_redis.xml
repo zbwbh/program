@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans      
+                        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd      
+                        http://www.springframework.org/schema/context      
+                        http://www.springframework.org/schema/context/spring-context-4.2.xsd      
+                        http://www.springframework.org/schema/cache   
+                        http://www.springframework.org/schema/cache/spring-cache-4.2.xsd">
+
+	<!-- 这里的jedisPoolConfig什么都没配，在收藏的那个html里面有很多类似jdbc的那种配置，比如什么maxTotal乱码七糟的也不知道是啥
+	 -->
+	<bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig" />
+	
+	<bean id="jedisShardInfo" class="redis.clients.jedis.JedisShardInfo">
+		<constructor-arg name="host" value="${redis.uri}" />
+	</bean>
+
+	<!--shardedJedisPool包含上面两个bean，可以把  jedisShardInfo(包含bean标签)直接写在list里面
+	这里采用的是ref引用的方式，哪种都行-->
+	<bean id="shardedJedisPool" class="redis.clients.jedis.ShardedJedisPool"
+		scope="singleton">
+		<constructor-arg index="0" ref="jedisPoolConfig" />
+		<constructor-arg index="1">
+			<list>
+				<ref bean="jedisShardInfo"/>
+			</list>
+		</constructor-arg>
+	</bean>
+
+</beans>		

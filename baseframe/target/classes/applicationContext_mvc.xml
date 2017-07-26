@@ -11,6 +11,7 @@
 
 	<!-- 改配置文件是控制springmvc的，所以必须要扫描到Controller -->
 	<context:component-scan base-package="com.baseframe.*">
+		<context:exclude-filter type ="annotation" expression= "org.springframework.stereotype.Service" />
 	</context:component-scan>
 	
 	<mvc:interceptors>

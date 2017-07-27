@@ -5,12 +5,10 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.apache.poi.hssf.util.Region;
 import org.springframework.stereotype.Service;
 
 import com.baseframe.dao.RegionDao;
 import com.baseframe.entity.Regions;
-import com.baseframe.redis.util.RedisClientTemplate;
 import com.baseframe.service.RegionService;
 
 @Service
@@ -19,13 +17,14 @@ public class RegionServiceImpl implements RegionService {
     @Resource
     private RegionDao regionDao;
     
-    @Resource
-    private RedisClientTemplate redisClientTemplate;
+//    @Resource
+//    private RedisClientTemplate redisClientTemplate;
     
     public void setRegionsFromRedis() {
         
     }
 
+    //经过登录测试是好使的，接下来该放在缓存里面了
     public List<Regions> getLinkageRegion() {
         List<Regions> provinceList = regionDao.selectRegionsByPRegionId(0);
         List<Regions> allList = regionDao.selectAllRegions();

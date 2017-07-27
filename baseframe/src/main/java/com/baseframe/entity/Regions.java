@@ -2,13 +2,7 @@ package com.baseframe.entity;
 
 import java.util.List;
 
-/**
- * 
- * 区域
- *
- * @author koala
- * @since 2017年6月23日
- */
+
 public class Regions {
 
     private Integer regionId;

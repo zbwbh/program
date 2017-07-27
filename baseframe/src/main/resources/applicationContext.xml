@@ -21,7 +21,6 @@
 						http://www.springframework.org/schema/tx/spring-tx-4.2.xsd 
 						http://www.springframework.org/schema/task
  		        		http://www.springframework.org/schema/task/spring-task-4.2.xsd">
-	<!-- 把原来的那部分替换试试，在网盘里 -->
 	<context:component-scan base-package="com.baseframe.*">
 		<context:exclude-filter type ="annotation" expression= "org.springframework.stereotype.Controller" />
 	</context:component-scan>
@@ -30,7 +29,7 @@
 		<property name="locations">
 			<list>
 				<value>classpath:/config/jdbc.properties</value>
-				<value>classpath:/config/jdbc.properties</value>
+				<value>classpath:/config/redis.properties</value>
 			</list>
 		</property>
 	</bean>
@@ -64,7 +63,7 @@
 	</bean>
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
-		<property name="basePackage" value="com.baseframe.*.dao" />
+		<property name="basePackage" value="com.baseframe.dao" />
 	</bean>
 	
 	<import resource="applicationContext_redis.xml" />

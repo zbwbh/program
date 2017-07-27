@@ -1,11 +1,11 @@
 package com.baseframe.util;
 
 /**
- * 常量类
+ * 全局常量
  * 
  *
  * @author koala
- * @since 2017年6月12日
+ * @since 2017年7月27日
  */
 public class Constants {
 

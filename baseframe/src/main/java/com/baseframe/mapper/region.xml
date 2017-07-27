@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.change.test.dao.RegionDao">
+<mapper namespace="com.baseframe.dao.RegionDao">
 	
 	<!-- 根据父id查找区域 -->
 	<select id="selectRegionsByPRegionId" resultType="com.baseframe.entity.Regions">

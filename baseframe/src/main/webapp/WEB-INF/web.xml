@@ -5,11 +5,27 @@
   	<param-name>contextConfigLocation</param-name>
   	<param-value>classpath:applicationContext.xml</param-value>
   </context-param>
+  <!-- 这个跟log4j.properties里面的文件添加位置那个前面那个root是一样的 -->
+	<context-param>
+		<param-name>webAppRootKey</param-name>
+		<param-value>baseframe.root</param-value>
+	</context-param>
+	
+	<!-- 日志这个没有写config，那么就是写在resource下面了，这个配置文件我先直接粘贴过来，没有懂 
+	还有参数一定是在监听器上面-->
+	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>classpath:log4j.properties</param-value>
+	</context-param>
   
-  <listener>
-  	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-  </listener>
-  
+	  <listener>
+	  	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	  </listener>
+	<!-- 既然有log配置文件就一定要有log监听器啊 -->
+  	<listener>
+		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+	</listener>
+	
   <filter>
   	<filter-name>encodingFilter</filter-name>
   	<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>

@@ -8,6 +8,8 @@ public interface RegionService {
 
     public void setRegionsFromRedis();
     
+    public List<Regions> getRegionsFromRedis();
+    
     /**
      * 获取区域联动
      *

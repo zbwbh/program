@@ -27,7 +27,7 @@ import com.baseframe.service.RegionService;
  */
 @Controller
 @RequestMapping("/wechat")
-public class WechatLogin {
+public class WechatMain {
 
     @Resource
     private RegionService regionService;
@@ -60,8 +60,8 @@ public class WechatLogin {
     
     @RequestMapping("/checkName")
     @ResponseBody
-    public String checkName(String name) {
-        return memberService.checkName(name);
+    public String checkName(String newName) {
+        return memberService.checkName(newName);
     }
     
     @RequestMapping("/formRegist")

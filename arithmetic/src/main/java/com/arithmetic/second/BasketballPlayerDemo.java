@@ -1,5 +1,12 @@
 package com.arithmetic.second;
 
+/**
+ * 该类算是一个基础数组操作的一个类，并不是很深，但是基础应该打牢一点
+ * 
+ *
+ * @author koala
+ * @since 2017年7月28日
+ */
 //安排篮球运动员上场
 public class BasketballPlayerDemo {
 

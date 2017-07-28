@@ -25,6 +25,6 @@ public class MemberServiceImpl implements MemberService {
         if(null!=members &&!members.isEmpty()&&members.size()==1) {
             return "1";
         }
-        return "0";
+        return "2";
     }
 }

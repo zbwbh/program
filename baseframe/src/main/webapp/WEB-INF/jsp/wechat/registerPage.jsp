@@ -92,14 +92,16 @@
 		function check(){
 			var name = document.getElementById('account').value;
 			$.ajax(ctx+'/wechat/checkName',{
-				data:{name:name},
+				data:{
+					newName:name
+				},
 				dataType:'json',//服务器返回json格式数据
-				type:'get',//HTTP请求类型
+				type:'post',//HTTP请求类型
 				success:function(data){
 					if(data=="1"){
 						
 					}else{
-						
+						mui.alert("用户已存在请重新输入");
 					}
 				},
 				error:function(xhr,type,errorThrown){

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baseframe.dao.RegionDao">
+	
+	<!-- 根据父id查找区域 -->
+	<select id="selectRegionsByPRegionId" resultType="com.baseframe.entity.Regions">
+		SELECT
+			region_id regionId,
+			p_region_id pRegionId,
+			local_name localName,
+			region_grade regionGrade
+		FROM
+			b_regions
+		WHERE
+			p_region_id = #{pRegionId}
+	</select>
+	
+	<!-- 查询所有区域 -->
+	<select id="selectAllRegions" resultType="com.baseframe.entity.Regions">
+		SELECT
+			region_id regionId,
+			p_region_id pRegionId,
+			local_name localName,
+			region_grade regionGrade
+		FROM
+			b_regions
+	</select>
+	
+</mapper>

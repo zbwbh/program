@@ -63,8 +63,15 @@ public class BubbleSort {
          * **并且起始比较次数就比数组的长度少一，因为
          * 数组元素之间空隙的个数比数组长度少一个，所以总的比较次数比数组长度少一
          */
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < (arr.length - 1) - i; j++) {
+        /**
+         * 原来我的外层循环的循环条件写的是i=0;i<arr.length;i++,内层循环就是那个，结果
+         * 后来发现将条件变成i=0;i<arr.length-1;i++，数组排序结果和上面那个一样，也就是说上面那个循环条件多比较了无用的一次
+         * 那么就合理了，现将代码改一下
+         */
+        //实际比较次数，意思就是说，一上来比较的次数就比数组元素的个数少一个，这样就很清晰了，培训机构误人子弟
+        int len = arr.length-1;
+        for (int i = 0; i < len ; i++) {
+            for (int j = 0; j < len - i; j++) {
                 if (arr[j] < arr[j + 1]) {
                     temp = arr[j];
                     arr[j] = arr[j + 1];

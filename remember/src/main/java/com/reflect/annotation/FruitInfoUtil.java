@@ -9,6 +9,9 @@ public class FruitInfoUtil {
         String preColor = "水果的颜色:";
         String preAddress = "水果的地址:";
         
+        /**
+         * 利用反射机制获取注解接口信息
+         */
         Field[] fields = clazz.getDeclaredFields();
         for(Field field : fields) {
             if(field.isAnnotationPresent(FruitName.class)){

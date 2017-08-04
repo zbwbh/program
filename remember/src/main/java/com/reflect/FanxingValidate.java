@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * 
- *
+ * 利用反射验证泛型机制
  * @author koala
  * @since 2017年8月1日
  */

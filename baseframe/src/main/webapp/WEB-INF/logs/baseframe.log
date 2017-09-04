@@ -1,93 +1,185 @@
-INFO  - 2017-08-03 18:34:45.620; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization started
-INFO  - 2017-08-03 18:34:45.623; org.springframework.context.support.AbstractApplicationContext; Refreshing WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Aug 03 18:34:45 CST 2017]; parent: Root WebApplicationContext
-INFO  - 2017-08-03 18:34:45.625; org.springframework.beans.factory.xml.XmlBeanDefinitionReader; Loading XML bean definitions from class path resource [applicationContext_mvc.xml]
-INFO  - 2017-08-03 18:34:46.128; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Aug 03 18:34:45 CST 2017]; parent: Root WebApplicationContext
-INFO  - 2017-08-03 18:34:46.173; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Aug 03 18:34:45 CST 2017]; parent: Root WebApplicationContext
-INFO  - 2017-08-03 18:34:46.278; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization completed in 656 ms
-INFO  - 2017-08-03 18:45:16.325; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization started
-INFO  - 2017-08-03 18:45:16.327; org.springframework.context.support.AbstractApplicationContext; Refreshing WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Aug 03 18:45:16 CST 2017]; parent: Root WebApplicationContext
-INFO  - 2017-08-03 18:45:16.327; org.springframework.beans.factory.xml.XmlBeanDefinitionReader; Loading XML bean definitions from class path resource [applicationContext_mvc.xml]
-INFO  - 2017-08-03 18:45:16.825; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Aug 03 18:45:16 CST 2017]; parent: Root WebApplicationContext
-INFO  - 2017-08-03 18:45:16.865; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Aug 03 18:45:16 CST 2017]; parent: Root WebApplicationContext
-INFO  - 2017-08-03 18:45:16.966; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization completed in 641 ms
-INFO  - 2017-08-03 18:46:11.326; org.springframework.beans.factory.xml.XmlBeanDefinitionReader; Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
-INFO  - 2017-08-03 18:46:11.353; org.springframework.jdbc.support.SQLErrorCodesFactory; SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]
-ERROR - 2017-08-03 18:46:11.359; org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler; Unexpected error occurred in scheduled task.
-org.springframework.jdbc.BadSqlGrammarException: 
-### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'exercise.t_kuai3_lottery' doesn't exist
-### The error may involve com.baseframe.dao.LotteryDao.insertLottery-Inline
-### The error occurred while setting parameters
-### SQL: INSERT INTO t_kuai3_lottery   (issue,number1,number2,number3,lottery_time,gmt_create,gmt_modified,remark)   VALUES   (?,?,?,?,?,now(),now(),?)
-### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'exercise.t_kuai3_lottery' doesn't exist
-; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'exercise.t_kuai3_lottery' doesn't exist
-	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:231)
-	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:73)
-	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:74)
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:399)
-	at com.sun.proxy.$Proxy16.insert(Unknown Source)
-	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:253)
-	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:52)
-	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:53)
-	at com.sun.proxy.$Proxy21.insertLottery(Unknown Source)
-	at com.baseframe.service.impl.TaskServiceImpl.test(TaskServiceImpl.java:52)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
-	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'exercise.t_kuai3_lottery' doesn't exist
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400)
-	at com.mysql.jdbc.Util.getInstance(Util.java:383)
-	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:980)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3847)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3783)
-	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2447)
-	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2594)
-	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2545)
-	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1901)
-	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1193)
-	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:493)
-	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:45)
-	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:73)
-	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
-	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:115)
-	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:75)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:170)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:157)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:386)
-	... 20 more
-INFO  - 2017-08-03 18:50:22.863; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization started
-INFO  - 2017-08-03 18:50:22.865; org.springframework.context.support.AbstractApplicationContext; Refreshing WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Aug 03 18:50:22 CST 2017]; parent: Root WebApplicationContext
-INFO  - 2017-08-03 18:50:22.866; org.springframework.beans.factory.xml.XmlBeanDefinitionReader; Loading XML bean definitions from class path resource [applicationContext_mvc.xml]
-INFO  - 2017-08-03 18:50:23.339; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Aug 03 18:50:22 CST 2017]; parent: Root WebApplicationContext
-INFO  - 2017-08-03 18:50:23.380; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Aug 03 18:50:22 CST 2017]; parent: Root WebApplicationContext
-INFO  - 2017-08-03 18:50:23.484; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization completed in 621 ms
-INFO  - 2017-08-03 18:54:33.069; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization started
-INFO  - 2017-08-03 18:54:33.071; org.springframework.context.support.AbstractApplicationContext; Refreshing WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Aug 03 18:54:33 CST 2017]; parent: Root WebApplicationContext
-INFO  - 2017-08-03 18:54:33.071; org.springframework.beans.factory.xml.XmlBeanDefinitionReader; Loading XML bean definitions from class path resource [applicationContext_mvc.xml]
-INFO  - 2017-08-03 18:54:33.595; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Aug 03 18:54:33 CST 2017]; parent: Root WebApplicationContext
-INFO  - 2017-08-03 18:54:33.634; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Aug 03 18:54:33 CST 2017]; parent: Root WebApplicationContext
-INFO  - 2017-08-03 18:54:33.744; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization completed in 675 ms
-INFO  - 2017-08-03 18:56:24.198; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization started
-INFO  - 2017-08-03 18:56:24.200; org.springframework.context.support.AbstractApplicationContext; Refreshing WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Aug 03 18:56:24 CST 2017]; parent: Root WebApplicationContext
-INFO  - 2017-08-03 18:56:24.201; org.springframework.beans.factory.xml.XmlBeanDefinitionReader; Loading XML bean definitions from class path resource [applicationContext_mvc.xml]
-INFO  - 2017-08-03 18:56:24.751; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Aug 03 18:56:24 CST 2017]; parent: Root WebApplicationContext
-INFO  - 2017-08-03 18:56:24.827; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Aug 03 18:56:24 CST 2017]; parent: Root WebApplicationContext
-INFO  - 2017-08-03 18:56:24.980; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization completed in 782 ms
+INFO  - 2017-09-01 15:54:16.326; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization started
+INFO  - 2017-09-01 15:54:16.329; org.springframework.context.support.AbstractApplicationContext; Refreshing WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 15:54:16 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 15:54:16.330; org.springframework.beans.factory.xml.XmlBeanDefinitionReader; Loading XML bean definitions from class path resource [applicationContext_mvc.xml]
+INFO  - 2017-09-01 15:54:17.229; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 15:54:16 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 15:54:17.272; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 15:54:16 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 15:54:17.385; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization completed in 1058 ms
+WARN  - 2017-09-01 15:54:39.910; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/brand/page] in DispatcherServlet with name 'springmvc'
+INFO  - 2017-09-01 15:55:53.089; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization started
+INFO  - 2017-09-01 15:55:53.091; org.springframework.context.support.AbstractApplicationContext; Refreshing WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 15:55:53 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 15:55:53.092; org.springframework.beans.factory.xml.XmlBeanDefinitionReader; Loading XML bean definitions from class path resource [applicationContext_mvc.xml]
+INFO  - 2017-09-01 15:55:53.595; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 15:55:53 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 15:55:53.646; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 15:55:53 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 15:55:53.757; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization completed in 668 ms
+WARN  - 2017-09-01 15:58:12.890; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 15:58:13.091; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 15:58:16.889; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/brand/page] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 15:58:20.395; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 15:58:20.410; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 15:58:33.252; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 15:58:33.267; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 15:59:07.237; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 15:59:07.252; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 15:59:15.481; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 15:59:15.481; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 15:59:46.427; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 16:00:02.571; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+INFO  - 2017-09-01 17:30:49.122; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization started
+INFO  - 2017-09-01 17:30:49.124; org.springframework.context.support.AbstractApplicationContext; Refreshing WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 17:30:49 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 17:30:49.125; org.springframework.beans.factory.xml.XmlBeanDefinitionReader; Loading XML bean definitions from class path resource [applicationContext_mvc.xml]
+INFO  - 2017-09-01 17:30:49.611; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 17:30:49 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 17:30:49.652; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 17:30:49 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 17:30:49.757; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization completed in 634 ms
+WARN  - 2017-09-01 17:30:53.691; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 17:31:21.616; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+INFO  - 2017-09-01 17:32:27.721; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization started
+INFO  - 2017-09-01 17:32:27.723; org.springframework.context.support.AbstractApplicationContext; Refreshing WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 17:32:27 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 17:32:27.724; org.springframework.beans.factory.xml.XmlBeanDefinitionReader; Loading XML bean definitions from class path resource [applicationContext_mvc.xml]
+INFO  - 2017-09-01 17:32:28.207; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 17:32:27 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 17:32:28.249; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 17:32:27 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 17:32:28.354; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization completed in 632 ms
+WARN  - 2017-09-01 17:32:31.664; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 17:33:35.917; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+INFO  - 2017-09-01 17:35:48.618; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization started
+INFO  - 2017-09-01 17:35:48.620; org.springframework.context.support.AbstractApplicationContext; Refreshing WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 17:35:48 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 17:35:48.621; org.springframework.beans.factory.xml.XmlBeanDefinitionReader; Loading XML bean definitions from class path resource [applicationContext_mvc.xml]
+INFO  - 2017-09-01 17:35:49.094; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 17:35:48 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 17:35:49.132; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 17:35:48 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 17:35:49.239; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization completed in 621 ms
+WARN  - 2017-09-01 17:35:58.786; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+INFO  - 2017-09-01 17:42:14.332; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization started
+INFO  - 2017-09-01 17:42:14.334; org.springframework.context.support.AbstractApplicationContext; Refreshing WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 17:42:14 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 17:42:14.335; org.springframework.beans.factory.xml.XmlBeanDefinitionReader; Loading XML bean definitions from class path resource [applicationContext_mvc.xml]
+INFO  - 2017-09-01 17:42:14.824; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 17:42:14 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 17:42:14.862; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 17:42:14 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 17:42:14.978; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization completed in 646 ms
+WARN  - 2017-09-01 17:42:19.461; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+INFO  - 2017-09-01 17:43:32.983; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization started
+INFO  - 2017-09-01 17:43:32.985; org.springframework.context.support.AbstractApplicationContext; Refreshing WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 17:43:32 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 17:43:32.985; org.springframework.beans.factory.xml.XmlBeanDefinitionReader; Loading XML bean definitions from class path resource [applicationContext_mvc.xml]
+INFO  - 2017-09-01 17:43:33.476; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 17:43:32 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 17:43:33.517; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 17:43:32 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 17:43:33.620; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization completed in 637 ms
+WARN  - 2017-09-01 17:43:38.213; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 17:43:46.933; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 17:48:37.710; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+INFO  - 2017-09-01 18:16:59.197; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization started
+INFO  - 2017-09-01 18:16:59.200; org.springframework.context.support.AbstractApplicationContext; Refreshing WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 18:16:59 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 18:16:59.200; org.springframework.beans.factory.xml.XmlBeanDefinitionReader; Loading XML bean definitions from class path resource [applicationContext_mvc.xml]
+INFO  - 2017-09-01 18:16:59.715; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 18:16:59 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 18:16:59.757; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 18:16:59 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 18:16:59.869; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization completed in 671 ms
+WARN  - 2017-09-01 18:17:52.100; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:17:54.917; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:17:55.964; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:24:56.941; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:24:56.950; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/js/localResizeIMG/lrz.all.bundle.js.map] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:25:14.617; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:25:14.633; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/js/localResizeIMG/lrz.all.bundle.js.map] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:26:25.150; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:26:25.168; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/js/localResizeIMG/lrz.all.bundle.js.map] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:26:37.190; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:26:37.205; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/js/localResizeIMG/lrz.all.bundle.js.map] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:26:44.560; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:26:44.582; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/js/localResizeIMG/lrz.all.bundle.js.map] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:26:46.948; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:26:46.964; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/js/localResizeIMG/lrz.all.bundle.js.map] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:27:19.909; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:27:19.929; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/js/localResizeIMG/lrz.all.bundle.js.map] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:28:20.104; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:28:20.123; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/js/localResizeIMG/lrz.all.bundle.js.map] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:28:30.817; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:28:30.834; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/js/localResizeIMG/lrz.all.bundle.js.map] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:28:49.187; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:28:49.206; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/js/localResizeIMG/lrz.all.bundle.js.map] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:29:22.182; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:29:22.200; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/js/localResizeIMG/lrz.all.bundle.js.map] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:29:57.251; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:29:57.270; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/js/localResizeIMG/lrz.all.bundle.js.map] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:31:32.693; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:31:32.713; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/js/localResizeIMG/lrz.all.bundle.js.map] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:33:02.949; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/js/localResizeIMG/lrz.all.bundle.js.map] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:33:02.953; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:34:38.810; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/js/localResizeIMG/lrz.all.bundle.js.map] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:34:38.816; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:34:49.372; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/js/localResizeIMG/lrz.all.bundle.js.map] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:34:49.375; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:34:54.991; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/js/localResizeIMG/lrz.all.bundle.js.map] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:34:54.996; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:35:10.546; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/js/localResizeIMG/lrz.all.bundle.js.map] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:35:10.550; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:35:19.505; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/js/localResizeIMG/lrz.all.bundle.js.map] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:35:19.508; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:36:02.962; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/js/localResizeIMG/lrz.all.bundle.js.map] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:36:02.964; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:36:19.193; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/js/localResizeIMG/lrz.all.bundle.js.map] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:36:19.196; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:38:01.401; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/js/localResizeIMG/lrz.all.bundle.js.map] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 18:38:01.407; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+INFO  - 2017-09-01 19:00:45.235; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization started
+INFO  - 2017-09-01 19:00:45.238; org.springframework.context.support.AbstractApplicationContext; Refreshing WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 19:00:45 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 19:00:45.238; org.springframework.beans.factory.xml.XmlBeanDefinitionReader; Loading XML bean definitions from class path resource [applicationContext_mvc.xml]
+INFO  - 2017-09-01 19:00:45.735; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 19:00:45 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 19:00:45.787; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 19:00:45 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 19:00:45.901; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization completed in 665 ms
+WARN  - 2017-09-01 19:00:52.756; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/js/localResizeIMG/lrz.all.bundle.js.map] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 19:00:52.759; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 19:01:40.587; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/js/localResizeIMG/lrz.all.bundle.js.map] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 19:01:40.590; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 19:02:15.497; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/js/localResizeIMG/lrz.all.bundle.js.map] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 19:02:15.508; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+INFO  - 2017-09-01 19:05:01.347; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization started
+INFO  - 2017-09-01 19:05:01.350; org.springframework.context.support.AbstractApplicationContext; Refreshing WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 19:05:01 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 19:05:01.350; org.springframework.beans.factory.xml.XmlBeanDefinitionReader; Loading XML bean definitions from class path resource [applicationContext_mvc.xml]
+INFO  - 2017-09-01 19:05:01.939; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 19:05:01 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 19:05:01.988; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 19:05:01 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 19:05:02.101; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization completed in 753 ms
+WARN  - 2017-09-01 19:05:08.117; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/js/localResizeIMG/lrz.all.bundle.js.map] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 19:05:08.122; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+INFO  - 2017-09-01 19:10:58.293; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization started
+INFO  - 2017-09-01 19:10:58.295; org.springframework.context.support.AbstractApplicationContext; Refreshing WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 19:10:58 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 19:10:58.296; org.springframework.beans.factory.xml.XmlBeanDefinitionReader; Loading XML bean definitions from class path resource [applicationContext_mvc.xml]
+INFO  - 2017-09-01 19:10:58.813; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 19:10:58 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 19:10:58.858; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 19:10:58 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 19:10:58.972; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization completed in 679 ms
+WARN  - 2017-09-01 19:11:26.131; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/js/localResizeIMG/lrz.all.bundle.js.map] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 19:11:26.134; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+INFO  - 2017-09-01 19:15:44.510; org.quartz.impl.StdSchedulerFactory; Using default implementation for ThreadExecutor
+INFO  - 2017-09-01 19:15:44.514; org.quartz.simpl.SimpleThreadPool; Job execution threads will use class loader of thread: main
+INFO  - 2017-09-01 19:15:44.575; org.quartz.core.SchedulerSignalerImpl; Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+INFO  - 2017-09-01 19:15:44.578; org.quartz.core.QuartzScheduler; Quartz Scheduler v.2.2.1 created.
+INFO  - 2017-09-01 19:15:44.581; org.quartz.simpl.RAMJobStore; RAMJobStore initialized.
+INFO  - 2017-09-01 19:15:44.584; org.quartz.core.QuartzScheduler; Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+INFO  - 2017-09-01 19:15:44.585; org.quartz.impl.StdSchedulerFactory; Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+INFO  - 2017-09-01 19:15:44.585; org.quartz.impl.StdSchedulerFactory; Quartz scheduler version: 2.2.1
+INFO  - 2017-09-01 19:15:49.313; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization started
+INFO  - 2017-09-01 19:15:49.316; org.springframework.context.support.AbstractApplicationContext; Refreshing WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 19:15:49 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 19:15:49.317; org.springframework.beans.factory.xml.XmlBeanDefinitionReader; Loading XML bean definitions from class path resource [applicationContext_mvc.xml]
+INFO  - 2017-09-01 19:15:49.801; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 19:15:49 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 19:15:49.848; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 19:15:49 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 19:15:49.957; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization completed in 644 ms
+WARN  - 2017-09-01 19:16:00.519; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/js/localResizeIMG/lrz.all.bundle.js.map] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 19:16:00.521; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+INFO  - 2017-09-01 19:16:44.400; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization started
+INFO  - 2017-09-01 19:16:44.402; org.springframework.context.support.AbstractApplicationContext; Refreshing WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 19:16:44 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 19:16:44.403; org.springframework.beans.factory.xml.XmlBeanDefinitionReader; Loading XML bean definitions from class path resource [applicationContext_mvc.xml]
+INFO  - 2017-09-01 19:16:44.935; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 19:16:44 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 19:16:44.982; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 19:16:44 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 19:16:45.095; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization completed in 694 ms
+WARN  - 2017-09-01 19:16:49.827; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/js/localResizeIMG/lrz.all.bundle.js.map] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 19:16:49.832; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+INFO  - 2017-09-01 19:20:25.573; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization started
+INFO  - 2017-09-01 19:20:25.575; org.springframework.context.support.AbstractApplicationContext; Refreshing WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 19:20:25 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 19:20:25.576; org.springframework.beans.factory.xml.XmlBeanDefinitionReader; Loading XML bean definitions from class path resource [applicationContext_mvc.xml]
+INFO  - 2017-09-01 19:20:26.101; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 19:20:25 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 19:20:26.146; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Fri Sep 01 19:20:25 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-09-01 19:20:26.261; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization completed in 688 ms
+WARN  - 2017-09-01 19:20:32.476; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/js/localResizeIMG/lrz.all.bundle.js.map] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-09-01 19:20:32.479; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'

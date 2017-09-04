@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSON;
 import com.baseframe.entity.Member;
-import com.baseframe.entity.Regions;
+import com.baseframe.entity.auxiliary.Regions;
 import com.baseframe.service.MemberService;
 import com.baseframe.service.RegionService;
 

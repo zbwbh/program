@@ -23,6 +23,7 @@ import org.springframework.stereotype.Service;
 import com.alibaba.fastjson.parser.ParserConfig;
 import com.baseframe.redis.datasource.RedisDataSource;
 import com.baseframe.redis.util.RedisClientTemplate;
+import com.baseframe.service.CarBrandService;
 import com.baseframe.service.RegionService;
 import com.baseframe.util.Constants;
 
@@ -43,10 +44,14 @@ public class LoadCache implements InitializingBean{
     @Resource
     private RegionService regionService;
     
+    @Resource
+    private CarBrandService carBrandService;
+    
     public void afterPropertiesSet() throws Exception {
         try {
             log.error("开始加载baseframe数据...");
             regionService.setRegionsFromRedis();
+            carBrandService.setCarBrandByFirstLetterGroup();
         }
         catch (Exception e) {
             e.printStackTrace();

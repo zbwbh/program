@@ -2,7 +2,7 @@ package com.baseframe.service;
 
 import java.util.List;
 
-import com.baseframe.entity.Regions;
+import com.baseframe.entity.auxiliary.Regions;
 
 public interface RegionService {
 

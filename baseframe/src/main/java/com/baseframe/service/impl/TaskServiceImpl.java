@@ -12,7 +12,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.baseframe.dao.LotteryDao;
 import com.baseframe.entity.Kuai3Lottery;
-import com.baseframe.entity.Middle;
+import com.baseframe.entity.auxiliary.Middle;
 import com.baseframe.service.TaskService;
 import com.baseframe.util.HttpConfigUtil;
 

@@ -39,6 +39,11 @@ public class Constants {
      */
     public static final String splitStr = "#frame_server";
     
+    /**
+     * if you are patient, you will know the relationships between the components.
+     */
+    public static final String BRAND_GROUP_BY_ABC="brand_first_letter_group";
+    
     public static boolean isConnectCatch(){
         return connectCatch;
     }

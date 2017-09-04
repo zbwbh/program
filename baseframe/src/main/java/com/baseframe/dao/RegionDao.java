@@ -2,7 +2,7 @@ package com.baseframe.dao;
 
 import java.util.List;
 
-import com.baseframe.entity.Regions;
+import com.baseframe.entity.auxiliary.Regions;
 
 public interface RegionDao {
 

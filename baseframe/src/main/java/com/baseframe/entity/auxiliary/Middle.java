@@ -1,4 +1,4 @@
-package com.baseframe.entity;
+package com.baseframe.entity.auxiliary;
 
 import java.util.List;
 

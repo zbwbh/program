@@ -29,6 +29,12 @@ import redis.clients.jedis.ShardedJedis;
  * 不过是java操作了redis，也就是jedis，这么来的
  * 
  * 该类没有实现接口，那么@Repository注解就是为了spring容器可以找到他(bean)并进行管理
+ * </br>
+ * 
+ * I saw this code for three times. </br>
+ * Now I've found that different methods have the same command</br>
+ * So please refer to the <a href="http://doc.redisfans.com/">redis command</a>
+ * 
  * @author koala
  * @since 2017年7月27日
  */

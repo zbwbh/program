@@ -39,12 +39,16 @@ public class Quicksort {
     }
 
     public static void main(String[] args) {
-        int[] a = new int[10];
+        int[] a = new int[9999];
         for (int i = 0; i < a.length; i++) {
             a[i] = (int) (1 + Math.random() * 100);
         }
         System.out.println(Arrays.toString(a));
+        long begin = System.currentTimeMillis();
         quickSort(a, 0, a.length - 1);
+        long end = System.currentTimeMillis();
+        long time = end - begin;
+        System.out.println(time);
         System.out.println(Arrays.toString(a));
     }
 }

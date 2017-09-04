@@ -1,0 +1,93 @@
+INFO  - 2017-08-03 18:34:45.620; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization started
+INFO  - 2017-08-03 18:34:45.623; org.springframework.context.support.AbstractApplicationContext; Refreshing WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Aug 03 18:34:45 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-08-03 18:34:45.625; org.springframework.beans.factory.xml.XmlBeanDefinitionReader; Loading XML bean definitions from class path resource [applicationContext_mvc.xml]
+INFO  - 2017-08-03 18:34:46.128; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Aug 03 18:34:45 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-08-03 18:34:46.173; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Aug 03 18:34:45 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-08-03 18:34:46.278; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization completed in 656 ms
+INFO  - 2017-08-03 18:45:16.325; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization started
+INFO  - 2017-08-03 18:45:16.327; org.springframework.context.support.AbstractApplicationContext; Refreshing WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Aug 03 18:45:16 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-08-03 18:45:16.327; org.springframework.beans.factory.xml.XmlBeanDefinitionReader; Loading XML bean definitions from class path resource [applicationContext_mvc.xml]
+INFO  - 2017-08-03 18:45:16.825; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Aug 03 18:45:16 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-08-03 18:45:16.865; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Aug 03 18:45:16 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-08-03 18:45:16.966; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization completed in 641 ms
+INFO  - 2017-08-03 18:46:11.326; org.springframework.beans.factory.xml.XmlBeanDefinitionReader; Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+INFO  - 2017-08-03 18:46:11.353; org.springframework.jdbc.support.SQLErrorCodesFactory; SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]
+ERROR - 2017-08-03 18:46:11.359; org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler; Unexpected error occurred in scheduled task.
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'exercise.t_kuai3_lottery' doesn't exist
+### The error may involve com.baseframe.dao.LotteryDao.insertLottery-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO t_kuai3_lottery   (issue,number1,number2,number3,lottery_time,gmt_create,gmt_modified,remark)   VALUES   (?,?,?,?,?,now(),now(),?)
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'exercise.t_kuai3_lottery' doesn't exist
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'exercise.t_kuai3_lottery' doesn't exist
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:231)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:73)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:74)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:399)
+	at com.sun.proxy.$Proxy16.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:253)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:52)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:53)
+	at com.sun.proxy.$Proxy21.insertLottery(Unknown Source)
+	at com.baseframe.service.impl.TaskServiceImpl.test(TaskServiceImpl.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'exercise.t_kuai3_lottery' doesn't exist
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400)
+	at com.mysql.jdbc.Util.getInstance(Util.java:383)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:980)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3847)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3783)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2447)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2594)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2545)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1901)
+	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1193)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:493)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:45)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:73)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:115)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:75)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:170)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:157)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:386)
+	... 20 more
+INFO  - 2017-08-03 18:50:22.863; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization started
+INFO  - 2017-08-03 18:50:22.865; org.springframework.context.support.AbstractApplicationContext; Refreshing WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Aug 03 18:50:22 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-08-03 18:50:22.866; org.springframework.beans.factory.xml.XmlBeanDefinitionReader; Loading XML bean definitions from class path resource [applicationContext_mvc.xml]
+INFO  - 2017-08-03 18:50:23.339; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Aug 03 18:50:22 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-08-03 18:50:23.380; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Aug 03 18:50:22 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-08-03 18:50:23.484; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization completed in 621 ms
+INFO  - 2017-08-03 18:54:33.069; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization started
+INFO  - 2017-08-03 18:54:33.071; org.springframework.context.support.AbstractApplicationContext; Refreshing WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Aug 03 18:54:33 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-08-03 18:54:33.071; org.springframework.beans.factory.xml.XmlBeanDefinitionReader; Loading XML bean definitions from class path resource [applicationContext_mvc.xml]
+INFO  - 2017-08-03 18:54:33.595; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Aug 03 18:54:33 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-08-03 18:54:33.634; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Aug 03 18:54:33 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-08-03 18:54:33.744; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization completed in 675 ms
+INFO  - 2017-08-03 18:56:24.198; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization started
+INFO  - 2017-08-03 18:56:24.200; org.springframework.context.support.AbstractApplicationContext; Refreshing WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Aug 03 18:56:24 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-08-03 18:56:24.201; org.springframework.beans.factory.xml.XmlBeanDefinitionReader; Loading XML bean definitions from class path resource [applicationContext_mvc.xml]
+INFO  - 2017-08-03 18:56:24.751; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Aug 03 18:56:24 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-08-03 18:56:24.827; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Aug 03 18:56:24 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-08-03 18:56:24.980; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization completed in 782 ms

@@ -49,7 +49,7 @@ public class CarBrandServiceImpl implements CarBrandService {
 
     public JSONObject getCarBrandsFromRedis() {
         // I did't create a new method to solve this problem.But it can always work.
-        // I mean the force conversion
+        // I mean the force conversion about a redis command
         String result = (String) redisClientTemplate.getKey(Constants.BRAND_GROUP_BY_ABC);
         if (null == result) {
             setCarBrandByFirstLetterGroup();

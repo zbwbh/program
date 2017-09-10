@@ -6,7 +6,7 @@ public class Queue {
 
     /**
      * 直接把取出来的数输出了
-     * 。。。无语了，好像C语言无法用变量定义数组长度，比如inta[5]
+     * 。。。无语了，好像C语言无法用变量定义数组长度，比如int a[5]
      * Java可以int[]a = new int[i],其他的好像没有区别了
      * @author koala
      * @since 2017年7月20日

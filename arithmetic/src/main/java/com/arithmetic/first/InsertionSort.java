@@ -25,10 +25,10 @@ public class InsertionSort {
             int key = arr[j];
             int i = j - 1;
             while (i >= 0 && arr[i] >= key) {
-                arr[i + 1] = arr[i];
-                i--;
+                arr[i + 1] = arr[i];// 实际上key的位置不变，只不过是首先将key提取出来，然后将key前面比key大的数进行移动
+                i--;                 //key只起到一个基准数的作用，只要比key大，那么在此基础上当前位置的数向后移位arr[i + 1] = arr[i];
             }
-            arr[i + 1] = key;
+            arr[i + 1] = key;//因为while循环最后一次需要做比较，所以进行了i--操作，如果不+1，那么key就不是在正确的位置上了
         }
     }
     

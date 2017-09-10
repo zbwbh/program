@@ -34,9 +34,9 @@ public class UploadPicController {
     @ResponseBody
     public JSONObject uploadPicture(HttpServletRequest request){
         // you can direct write here.or you can write it in service
-        // I choose the first.
+        // I choose the second.
         JSONObject jo = new JSONObject();
-        String result = uploadPicService.uploadPic(request);
+        String result = uploadPicService.uploadPic3(request);
         if (null == result) {
             jo.put("code", 0);
             jo.put("msg", "no data");

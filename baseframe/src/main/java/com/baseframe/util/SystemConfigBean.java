@@ -15,6 +15,17 @@ public class SystemConfigBean {
     @Value("#{configProperties['domain']}")
     private String domain;
 
+    @Value("#{configProperties['imgPath']}")
+    private String imgPath;
+
+    public String getImgPath() {
+        return imgPath;
+    }
+
+    public void setImgPath(String imgPath) {
+        this.imgPath = imgPath;
+    }
+
     public String getOrderModelPath() {
         return orderModelPath;
     }

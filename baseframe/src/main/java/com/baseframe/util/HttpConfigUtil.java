@@ -9,7 +9,7 @@ import java.net.URLConnection;
 /**
  * 
  * 获取网页json数据，其实主要是生成页面里面所有内容的字符串
- *
+ * 网址不一定永久有效，但是方法应该记住
  * @author koala
  * @since 2017年8月2日
  */

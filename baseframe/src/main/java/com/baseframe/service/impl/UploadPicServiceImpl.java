@@ -1,6 +1,7 @@
 package com.baseframe.service.impl;
 
 import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Iterator;
@@ -152,7 +153,34 @@ public class UploadPicServiceImpl implements UploadPicService {
     }
 
     public String uploadPic4(HttpServletRequest request) {
-        // TODO Auto-generated method stub
+        //没有什么东西是一蹴而就的
+        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());
+        if (!multipartResolver.isMultipart(request)) {
+            return null;
+        }
+        MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest)request;
+        Iterator<String> it = multipartRequest.getFileNames();
+        while (it.hasNext()) {
+            MultipartFile requestFile = multipartRequest.getFile(it.next());
+            if (null != requestFile) {
+                String fileName = requestFile.getOriginalFilename();
+                String suffix = fileName.substring(fileName.lastIndexOf("."));
+                String newName = newName(suffix);
+                String path = systemConfigBean.getImgPath()+newName;
+                File local = new File(systemConfigBean.getImgPath());
+                File f = new File(path);
+                if (!local.exists()) {
+                    local.mkdirs();
+                }
+                try {
+                    requestFile.transferTo(f);
+                    return path;
+                }
+                catch (IllegalStateException | IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
         return null;
     }
 

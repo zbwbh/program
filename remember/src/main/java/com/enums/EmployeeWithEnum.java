@@ -1,17 +1,27 @@
 package com.enums;
 
 enum Restday {
-    MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY;// 这里的分号是可以不写的，但是如果不写后面无法写其他方法，因为枚举是特殊的类，但是它也属于类
+    MONDAY("星期一",1),
+    TUESDAY("星期二",2),
+    WEDNESDAY("星期三",3),
+    THURSDAY("星期四",4),
+    FRIDAY("星期五",5),
+    SATURDAY("星期六",6),
+    SUNDAY("星期日",7);// 这里的分号是可以不写的，但是如果不写后面无法写其他方法，因为枚举是特殊的类，但是它也属于类
     // 具有类的一些特点，有方法，有property，
 
     private String name;
 
     private int index;
     // 这里这个构造方法不知道为什么会编译报错，明明默认继承了java.lang.Enum类里面的私有构造方法，内部允许有一个枚举常量名，和一个编号(详见文档)
-    // Restday(String name,int index){
-    // this.name = name;
-    // this.index=index;
-    // }
+    // 2017-9-12 19:01:33
+    // 之前也没记录是什么时候写的 。。，刚才在baseframe里面联系httppost方法的时候返回数据需要用到枚举类，结果发现问题了突然想起来以前写过枚举类
+    //但好像还是很懵逼，这回清晰一些了
+    // 先这么记，枚举类是单例模式的，所以构造器必须私有化，一旦构造器确定，枚举属性的属性就确定了，回到baseframe吧
+    private Restday(String name,int index){
+     this.name = name;
+     this.index=index;
+     }
 
     public String getName() {
         return name;

@@ -44,9 +44,6 @@
         <property name="properties" ref="configProperties" />
     </bean>
     
-    <tx:annotation-driven transaction-manager="transactionMyBatisManager"
-		proxy-target-class="true" />
-	
 	<!-- 定时任务只要配置以下几个就可以了，然后直接在被扫描的类中添加@@Scheduled注解，亲测有效 -->
 	<task:executor id="executor" pool-size="5" />  
 	<task:scheduler id="scheduler" pool-size="10" />  
@@ -68,7 +65,7 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="mapperLocations">
 			<list>
-				<value>classpath:com/baseframe/mapper/*.xml</value>
+				<value>classpath:mapper/*.xml</value>
 			</list>
 		</property>
 	</bean>

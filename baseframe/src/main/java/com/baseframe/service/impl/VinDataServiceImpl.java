@@ -76,7 +76,7 @@ public class VinDataServiceImpl implements VinDataService {
                 
             },executor);
             //lambda表达式，之前用的是1.5，版本不对，然后在设置当中修改成1.8之后可以用了
-            future.thenAccept(e -> System.out.println(e + "ok"));
+//            future.thenAccept(e -> System.out.println(e + "ok"));
             
             resultJson.put("code", 200);
             resultJson.put("data", jo);

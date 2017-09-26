@@ -36,40 +36,32 @@
 <body>
 	<!--可能我写的这些以及js部分已经过时了，不过总该是要知道点啊-->
 	<header class="mui-bar mui-bar-nav">
-		<h1 class="mui-title">注册</h1>
-	</header>
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">注册</h1>
+		</header>
 	<div class="mui-content">
 		<div class="mui-content-padded" style="margin: 5px;">
 		<form id='regist-form' class="mui-input-group">
 			<div class="mui-input-row">
 				<label>账号</label>
-				<input id='account' name="name" type="text" class="mui-input-clear" onblur="check()" placeholder="请输入账号" maxlength="30">
+				<input id='account' name="name" type="text" class="mui-input-clear require" placeholder="请输入账号" maxlength="30">
 			</div>
 			<div class="mui-input-row">
 				<label>密码</label>
-				<input id='password' name="password" type="password" class="mui-input-password" placeholder="请输入密码" maxlength="30">
-			</div>
-			<div class="mui-input-row">
-				<label>确认密码</label>
-				<input id='checkPwd' type="password" class="mui-input-password" placeholder="确认密码" maxlength="30">
+				<input id='password' name="password" type="password" class="mui-input-password require" placeholder="请输入密码" maxlength="30">
 			</div>
 			<div class="mui-input-row">
 				<label>电话</label>
-				<input id='tel' type="text" name="tel" class="mui-input-clear" placeholder="请输入电话" maxlength="11">
+				<input id='tel' type="text" name="tel" class="mui-input require" placeholder="请输入电话" maxlength="11">
 			</div>
 			<div class="mui-input-row">
-				<label>省份</label>
-				<input id='showProvincePicker' type="text" class="mui-input-clear" value="" placeholder="请输入省份" readonly="">
-				<input id="provinceId" name="provinceId" type="text" value=""/>
-			</div>
-			<div class="mui-input-row">
-				<label>城市</label>
-				<input id='city' type="text" class="mui-input-clear" value="" placeholder="请输入城市" readonly="">
+				<label>地址</label>
+				<input id='showProvincePicker' type="text" class="mui-input require" value="" placeholder="省/市/区" readonly="">
+				<input id="province" name="province" type="hidden" value=""/>
+				<input id="provinceId" name="provinceId" type="hidden" value=""/>
+				<input id='city' name="city" type="hidden" value="">
 				<input id="cityId" name="cityId" type="hidden" value=""/>
-			</div>
-			<div class="mui-input-row">
-				<label>区域</label>
-				<input id='region' type="text" class="mui-input-clear" value="" placeholder="请输入区域" readonly="">
+				<input id='region' name="region" type="hidden" value="">
 				<input id="regionId" name="regionId" type="hidden" value=""/>
 			</div>
 			<div class="mui-content-padded" style="margin: 5px;">
@@ -89,26 +81,7 @@
 	<script type="text/javascript">
 		var ctx = '${ctx}';
 		var regions = ${regions};
-		function check(){
-			var name = document.getElementById('account').value;
-			$.ajax(ctx+'/wechat/checkName',{
-				data:{
-					newName:name
-				},
-				dataType:'json',//服务器返回json格式数据
-				type:'post',//HTTP请求类型
-				success:function(data){
-					if(data=="1"){
-						
-					}else{
-						mui.alert("用户已存在请重新输入");
-					}
-				},
-				error:function(xhr,type,errorThrown){
-					mui.alert('发生异常，请稍后重试或联系管理员');
-				}
-			});
-		}
+		console.log(regions);
 		(function($, doc) {
 				$.init();
 				$.ready(function() {
@@ -119,7 +92,8 @@
 					var showProvincePickerDom = doc.getElementById('showProvincePicker');
 					showProvincePickerDom.addEventListener('tap', function(event) {
 						cityPicker.show(function(items) {
-							doc.getElementById('showProvincePicker').value=items[0].text;
+							doc.getElementById('showProvincePicker').value=items[0].text+'-'+items[1].text+'-'+items[2].text;
+							doc.getElementById('province').value=items[0].text;
 							doc.getElementById('provinceId').value=items[0].regionId;
 							doc.getElementById('city').value=items[1].text;
 							doc.getElementById('cityId').value=items[1].regionId;
@@ -135,14 +109,27 @@
 						mui.alert('请输入账号');
 						return ;
 					}
+//					$.ajax(ctx+'/wechat/checkName',{
+//						data:{
+//							newName:name
+//						},
+//						dataType:'json',//服务器返回json格式数据
+//						type:'post',//HTTP请求类型
+//						success:function(data){
+//							console.log(data);
+//							if(data=="1"){
+//								
+//							}else{
+//								mui.alert("用户已存在请重新输入");
+//							}
+//						},
+//						error:function(xhr,type,errorThrown){
+//							mui.alert('发生异常，请稍后重试或联系管理员');
+//						}
+//					});
 					var password = doc.getElementById('password').value;
 					if(password==''){
 						mui.alert('请输入密码');
-						return;
-					}
-					var checkPwd = doc.getElementById('checkPwd').value;
-					if(password!=checkPwd){
-						mui.alert("两次输入的密码不一致，请重新输入");
 						return;
 					}
 					var tel = doc.getElementById('tel').value;

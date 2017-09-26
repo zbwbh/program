@@ -54,13 +54,13 @@ public class UploadPicServiceImpl implements UploadPicService {
                     String newFile = newName(suffix);
                     String filePath = systemConfigBean.getImgPath() + newFile;
                     String localPath = systemConfigBean.getImgPath();
-                    File local = new File(localPath);
+                    File local = new File(localPath);//生产文件夹的路径，不包含图片
                     File f = new File(filePath);
                     try {
                         if (!local.exists()){
                             local.mkdirs();
                         }
-                        myFile.transferTo(f);
+                        myFile.transferTo(f);//图片保存的真实路径，包含图片
                         return filePath;
                     }
                     catch (Exception e) {
@@ -158,26 +158,27 @@ public class UploadPicServiceImpl implements UploadPicService {
         if (!multipartResolver.isMultipart(request)) {
             return null;
         }
-        MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest)request;
-        Iterator<String> it = multipartRequest.getFileNames();
+        MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest)request;
+        Iterator<String> it = multipartHttpServletRequest.getFileNames();
         while (it.hasNext()) {
-            MultipartFile requestFile = multipartRequest.getFile(it.next());
+            MultipartFile requestFile = multipartHttpServletRequest.getFile(it.next());
             if (null != requestFile) {
                 String fileName = requestFile.getOriginalFilename();
-                String suffix = fileName.substring(fileName.lastIndexOf("."));
-                String newName = newName(suffix);
-                String path = systemConfigBean.getImgPath()+newName;
-                File local = new File(systemConfigBean.getImgPath());
-                File f = new File(path);
-                if (!local.exists()) {
-                    local.mkdirs();
-                }
-                try {
-                    requestFile.transferTo(f);
-                    return path;
-                }
-                catch (IllegalStateException | IOException e) {
-                    e.printStackTrace();
+                if (!fileName.isEmpty()) {
+                    String suffix = fileName.substring(fileName.lastIndexOf("."));
+                    String newName = newName(suffix);
+                    String path = systemConfigBean.getImgPath()+newName;
+                    File local = new File(systemConfigBean.getImgPath());
+                    File f = new File(path);
+                    try {
+                        if (!local.exists()) {
+                            local.mkdirs();
+                        }
+                        requestFile.transferTo(f);
+                        return path;
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
                 }
             }
         }

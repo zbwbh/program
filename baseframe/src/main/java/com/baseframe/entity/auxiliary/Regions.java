@@ -2,7 +2,6 @@ package com.baseframe.entity.auxiliary;
 
 import java.util.List;
 
-
 public class Regions {
 
     private Integer regionId;
@@ -23,7 +22,7 @@ public class Regions {
 
     private String text;
 
-    //mui联动使用
+    // mui联动使用
     public String getText() {
         return localName;
     }
@@ -95,4 +94,27 @@ public class Regions {
     public void setCod(String cod) {
         this.cod = cod == null ? null : cod.trim();
     }
+
+    @Override
+    public String toString() {
+        return "Regions [regionId=" + regionId
+                + ", pRegionId="
+                + pRegionId
+                + ", regionPath="
+                + regionPath
+                + ", regionGrade="
+                + regionGrade
+                + ", localName="
+                + localName
+                + ", zipcode="
+                + zipcode
+                + ", cod="
+                + cod
+                + ", children="
+                + children
+                + ", text="
+                + text
+                + "]";
+    }
+
 }

@@ -127,6 +127,7 @@ public class RedisClientTemplate {
             }
         }
     }
+    
     public void setCacheSet(String key,String json) {
         if(Constants.isConnectCatch()){
             try {

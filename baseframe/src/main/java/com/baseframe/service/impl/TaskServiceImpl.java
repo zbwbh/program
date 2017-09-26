@@ -18,7 +18,8 @@ import com.baseframe.util.HttpConfigUtil;
 
 /**
  * 定时任务实现
- * 
+ * 只需要在applicationContext.xml当中加上相应的配置就可以了
+ * 跟Spring相关的，使用的是spring的定时任务，task开头的标签
  *
  * @author koala
  * @since 2017年8月3日

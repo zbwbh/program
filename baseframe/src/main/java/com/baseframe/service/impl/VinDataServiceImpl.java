@@ -5,9 +5,13 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.function.Supplier;
 
+//import java.util.concurrent.CompletableFuture;
+//import java.util.concurrent.ExecutorService;
+//import java.util.concurrent.Executors;
+//import java.util.function.Supplier;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -73,10 +77,10 @@ public class VinDataServiceImpl implements VinDataService {
                     }
                     return "力洋vin码接口返回数据插入数据库任务结束";
                 }
-                
+
             },executor);
             //lambda表达式，之前用的是1.5，版本不对，然后在设置当中修改成1.8之后可以用了
-//            future.thenAccept(e -> System.out.println(e + "ok"));
+            future.thenAccept(e -> System.out.println(e + "ok"));
             
             resultJson.put("code", 200);
             resultJson.put("data", jo);

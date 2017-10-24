@@ -13,3 +13,6 @@
 <script src="${ctx}/static/mui_3.2.0/js/mui.pullToRefresh.js"></script>
 <script src="${ctx}/static/mui_3.2.0/js/mui.pullToRefresh.material.js"></script>
 <script src="${ctx}/static/mui_3.2.0/js/mui.picker.min.js"></script>
+<script>
+	var ctx = '${ctx}';
+</script>

@@ -1,0 +1,6 @@
+INFO  - 2017-10-19 14:16:09.004; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization started
+INFO  - 2017-10-19 14:16:09.008; org.springframework.context.support.AbstractApplicationContext; Refreshing WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Oct 19 14:16:09 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-10-19 14:16:09.009; org.springframework.beans.factory.xml.XmlBeanDefinitionReader; Loading XML bean definitions from class path resource [applicationContext_mvc.xml]
+INFO  - 2017-10-19 14:16:09.904; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Oct 19 14:16:09 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-10-19 14:16:10.021; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Oct 19 14:16:09 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-10-19 14:16:10.223; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization completed in 1217 ms

@@ -9,7 +9,7 @@ public class SystemConfigBean {
     @Value("#{configProperties['title']}")
     private String title;
 
-    @Value("#{configProperties['orderMaodelPath']}")
+    @Value("#{configProperties['orderModelPath']}")
     private String orderModelPath;
 
     @Value("#{configProperties['domain']}")

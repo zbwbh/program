@@ -1,0 +1,12 @@
+INFO  - 2017-10-23 08:58:15.298; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization started
+INFO  - 2017-10-23 08:58:15.316; org.springframework.context.support.AbstractApplicationContext; Refreshing WebApplicationContext for namespace 'springmvc-servlet': startup date [Mon Oct 23 08:58:15 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-10-23 08:58:15.318; org.springframework.beans.factory.xml.XmlBeanDefinitionReader; Loading XML bean definitions from class path resource [applicationContext_mvc.xml]
+INFO  - 2017-10-23 08:58:16.174; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Mon Oct 23 08:58:15 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-10-23 08:58:16.238; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Mon Oct 23 08:58:15 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-10-23 08:58:16.408; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization completed in 1096 ms
+INFO  - 2017-10-23 09:01:45.664; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization started
+INFO  - 2017-10-23 09:01:45.667; org.springframework.context.support.AbstractApplicationContext; Refreshing WebApplicationContext for namespace 'springmvc-servlet': startup date [Mon Oct 23 09:01:45 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-10-23 09:01:45.668; org.springframework.beans.factory.xml.XmlBeanDefinitionReader; Loading XML bean definitions from class path resource [applicationContext_mvc.xml]
+INFO  - 2017-10-23 09:01:46.412; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Mon Oct 23 09:01:45 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-10-23 09:01:46.468; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Mon Oct 23 09:01:45 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-10-23 09:01:46.649; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization completed in 984 ms

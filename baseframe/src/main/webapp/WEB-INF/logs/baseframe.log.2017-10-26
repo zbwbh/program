@@ -1,0 +1,10 @@
+INFO  - 2017-10-26 13:45:45.447; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization started
+INFO  - 2017-10-26 13:45:45.453; org.springframework.context.support.AbstractApplicationContext; Refreshing WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Oct 26 13:45:45 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-10-26 13:45:45.456; org.springframework.beans.factory.xml.XmlBeanDefinitionReader; Loading XML bean definitions from class path resource [applicationContext_mvc.xml]
+INFO  - 2017-10-26 13:45:46.754; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Oct 26 13:45:45 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-10-26 13:45:46.832; org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter; Looking for @ControllerAdvice: WebApplicationContext for namespace 'springmvc-servlet': startup date [Thu Oct 26 13:45:45 CST 2017]; parent: Root WebApplicationContext
+INFO  - 2017-10-26 13:45:47.070; org.springframework.web.servlet.FrameworkServlet; FrameworkServlet 'springmvc': initialization completed in 1620 ms
+WARN  - 2017-10-26 13:55:09.275; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-10-26 14:14:30.932; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-10-26 14:15:18.229; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'
+WARN  - 2017-10-26 14:15:49.917; org.springframework.web.servlet.DispatcherServlet; No mapping found for HTTP request with URI [/baseframe/static/mui_3.2.0/fonts/mui.ttf] in DispatcherServlet with name 'springmvc'

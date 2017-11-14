@@ -92,27 +92,4 @@ public class Member {
         this.createTime = createTime;
     }
 
-    @Override
-    public String toString() {
-        return "Member [id=" + id
-                + ", name="
-                + name
-                + ", tel="
-                + tel
-                + ", password="
-                + password
-                + ", provinceId="
-                + provinceId
-                + ", cityId="
-                + cityId
-                + ", regionId="
-                + regionId
-                + ", remark="
-                + remark
-                + ", createTime="
-                + createTime
-                + "]";
-    }
-
-    
 }

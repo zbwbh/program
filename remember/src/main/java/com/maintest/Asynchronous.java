@@ -15,7 +15,7 @@ import java.util.function.Supplier;
 public class Asynchronous {
 
     public static void main(String[] args) {
-        //来自java.util.concurent包
+        //来自java.util.concurrent包
         //刚开始是copy的过程，然后学习的过程呢就该有思考了，这段API相当陌生了
         //起始的时候有Executor，Executors等等很多选择，这时候想到了多态编程
         //于是首先打出单词Executor+万能键，找到接口，其中ExecutorService就是该包下的接口
@@ -47,6 +47,7 @@ public class Asynchronous {
                  */
             }
         }, executor);
+        //java的lambda表达式还没有研究过
         future.thenAccept(param->System.out.println(param + ",完成了!"));
         System.out.println("main方法当中的线程开始");
         

@@ -11,7 +11,7 @@
 			local_name localName,
 			region_grade regionGrade
 		FROM
-			b_regions
+			es_regions
 		WHERE
 			p_region_id = #{pRegionId}
 	</select>
@@ -24,7 +24,7 @@
 			local_name localName,
 			region_grade regionGrade
 		FROM
-			b_regions
+			es_regions
 	</select>
 	
 </mapper>

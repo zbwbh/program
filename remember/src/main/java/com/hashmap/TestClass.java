@@ -28,7 +28,7 @@ public class TestClass {
          * 
          * 对于第一条，在java编程思想里也有一段类似的话：
          * 设计hashCode()时最重要的因素就是：无论何时，对同一个对象调用hashCode()都应该产生同样
-         * 的值。如果在讲一个对象用put()添加进HashMap时产生一个hashCode值，而用get()取出时却产生了
+         * 的值。如果在将一个对象用put()添加进HashMap时产生一个hashCode值，而用get()取出时却产生了
          * 另一个hashCode值，那么就无法获取该对象了。所以如果你的hashCode方法依赖于对象中
          * 易变的数据，用户就要当心了，因为此数据发生变化时，hashCode方法就会生成一个不同的散列码 
          * 请看下面的例子：

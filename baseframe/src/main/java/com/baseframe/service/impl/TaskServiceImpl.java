@@ -50,7 +50,7 @@ public class TaskServiceImpl implements TaskService {
             k.setNumber2(m.getList().get(1));
             k.setNumber3(m.getList().get(2));
             k.setRemark(m.getTypeByLabel());
-            l.insertLottery(k);
+            l.saveLottery(k);
         }
         System.out.println("结束任务");
         //原来想用Map的方式来遍历的，可是没用上，不过这个记下来也好

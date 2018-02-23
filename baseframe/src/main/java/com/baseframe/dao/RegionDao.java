@@ -6,8 +6,8 @@ import com.baseframe.entity.auxiliary.Regions;
 
 public interface RegionDao {
 
-    List<Regions> selectRegionsByPRegionId(Integer pRegionId);
+    List<Regions> listRegionsByPRegionId(Integer pRegionId);
     
-    List<Regions> selectAllRegions();
+    List<Regions> listAllRegions();
     
 }

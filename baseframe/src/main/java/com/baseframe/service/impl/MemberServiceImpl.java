@@ -17,11 +17,11 @@ public class MemberServiceImpl implements MemberService {
     private MemberDao memberDao;
     
     public void insertMember(Member member) {
-        memberDao.insertMember(member);
+        memberDao.saveMember(member);
     }
 
     public String checkName(String name) {
-        List<Member> members = memberDao.selectMembersByName(name);
+        List<Member> members = memberDao.listMembersByName(name);
         if(null!=members &&!members.isEmpty()&&members.size()==1) {
             return "1";
         }

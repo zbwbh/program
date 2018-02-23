@@ -4,5 +4,5 @@ import com.baseframe.entity.Kuai3Lottery;
 
 public interface LotteryDao {
 
-    void insertLottery(Kuai3Lottery kl);
+    void saveLottery(Kuai3Lottery kl);
 }

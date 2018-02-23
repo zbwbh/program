@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * 测试类，验证是否能走通springmvc
- * 该类只负责能不能走通，其他的交给别人测试
+ * 
  *
  * @author koala
  * @since 2017年7月26日

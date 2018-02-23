@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.baseframe.dao.LotteryDao">
-	<insert id="insertLottery" parameterType="com.baseframe.entity.Kuai3Lottery">
+	<insert id="saveLottery" parameterType="com.baseframe.entity.Kuai3Lottery">
 		INSERT INTO b_kuai3_lottery
 		(issue,number1,number2,number3,lottery_time,gmt_create,gmt_modified,remark)
 		VALUES

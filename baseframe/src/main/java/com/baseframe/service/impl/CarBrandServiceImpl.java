@@ -38,7 +38,7 @@ public class CarBrandServiceImpl implements CarBrandService {
                               'N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
         for (int i = 0; i < letter.length; i++) {
             c.setCarFirstLetter(letter[i]);
-            List<CarBrand> list = carBrandDao.selectCarBrandsByFirstLetter(c);
+            List<CarBrand> list = carBrandDao.listCarBrandsByFirstLetter(c);
             if (!list.isEmpty()) {
                 jo.put(letter[i].toString(), list);
             }

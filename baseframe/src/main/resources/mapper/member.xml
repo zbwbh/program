@@ -3,13 +3,13 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.baseframe.dao.MemberDao">
 	
-	<insert id="insertMember" parameterType="com.baseframe.entity.Member">
+	<insert id="saveMember" parameterType="com.baseframe.entity.Member">
 		INSERT INTO b_member
 		(name,tel,password,city_id,province_id,region_id,remark,create_time)
 		VALUES
 		(#{name},#{tel},#{password},#{cityId},#{provinceId},#{regionId},#{remark},#{createTime})
 	</insert>
-	<select id="selectAllMembers" resultType="com.baseframe.entity.Member">
+	<select id="listAllMembers" resultType="com.baseframe.entity.Member">
 		SELECT
 			id			id,
 			name		name,
@@ -24,7 +24,7 @@
 			b_member
 	</select>
 	
-	<select id="selectMembersByName" resultType="com.baseframe.entity.Member">
+	<select id="listMembersByName" resultType="com.baseframe.entity.Member">
 		SELECT
 			id			id,
 			name		name,

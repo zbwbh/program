@@ -26,10 +26,10 @@ public class RegionServiceImpl implements RegionService {
     @Resource
     private RedisClientTemplate redisClientTemplate;
     
-    //经过登录测试是好使的，接下来该放在缓存里面了
+    //经过登录测试是好使的，接下来该放在缓存里面了,通常情况下多层for循环是不建议的
     public List<Regions> getLinkageRegion() {
-        List<Regions> province = regionDao.selectRegionsByPRegionId(0);
-        List<Regions> all = regionDao.selectAllRegions();
+        List<Regions> province = regionDao.listRegionsByPRegionId(0);
+        List<Regions> all = regionDao.listAllRegions();
         //从all当中根据province逐层往下抽取子集合
         for (Regions p : province) {
             List<Regions> city = new ArrayList<Regions>();

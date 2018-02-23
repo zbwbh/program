@@ -40,11 +40,12 @@
             </list>
         </property>
     </bean>
+    <!-- 通过注解找到配置文件中对应的属性  @Value -->
     <bean id="pubpropertyConfigurer" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
         <property name="properties" ref="configProperties" />
     </bean>
     
-	<!-- 定时任务只要配置以下几个就可以了，然后直接在被扫描的类中添加@@Scheduled注解，亲测有效 -->
+	<!-- 定时任务只要配置以下几个就可以了，然后直接在被扫描的类中添加@Scheduled注解，亲测有效 -->
 	<task:executor id="executor" pool-size="5" />  
 	<task:scheduler id="scheduler" pool-size="10" />  
 	<task:annotation-driven executor="executor" scheduler="scheduler" />

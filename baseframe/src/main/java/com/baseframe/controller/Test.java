@@ -31,7 +31,7 @@ public class Test {
 //        System.out.println(rand1);
 //        System.out.println(rand);
         String str = "a";
-        StringBuffer num = new StringBuffer(); 
+        StringBuffer num = new StringBuffer();
         for (byte b : str.getBytes()) {
             num.append(Math.abs(b - 96));
         }
